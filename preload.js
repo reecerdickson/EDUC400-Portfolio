@@ -16,6 +16,18 @@ var loadState = 6;
 
 var song = [
 	new Howl({
+		src:['resources/Banjo.ogg','resources/Banjo.wav'],
+		loop: true,
+		volume: 0,
+		onload: ()=>{loadState -= 1;},
+		onloaderror:err=>{
+			document.getElementById('loader').innerHTML = 
+			`ERROR<p>Banjo: ${err}</p>`
+		},
+		onstop:i=>{song[0].play()},
+		onplayerror:(i,e)=>{console.error(e)}
+	}),
+	new Howl({
 		src:['resources/Accordion.ogg','resources/Accordion.wav'],
 		loop: true,
 		volume: 0,
@@ -24,7 +36,7 @@ var song = [
 			document.getElementById('loader').innerHTML = 
 			`ERROR<p>Accordion: ${err}</p>`
 		},
-		onstop:i=>{song[0].play()},
+		onstop:i=>{song[1].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
@@ -36,29 +48,17 @@ var song = [
 			document.getElementById('loader').innerHTML = 
 			`ERROR<p>Acoustic Guitar: ${err}</p>`
 		},
-		onstop:i=>{song[1].play()},
-		onplayerror:(i,e)=>{console.error(e)}
-	}),
-	new Howl({
-		src:['resources/Electric Guitar Harmony.ogg','resources/Electric Guitar Harmony.wav'],
-		loop: true,
-		volume: 0,
-		onload: ()=>{loadState -= 1;},
-		onloaderror:err=>{
-			document.getElementById('loader').innerHTML = 
-			`ERROR<p>Electric Guitar Harmony: ${err}</p>`
-		},
 		onstop:i=>{song[2].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
-		src:['resources/Banjo.ogg','resources/Banjo.wav'],
+		src:['resources/Percussion.ogg','resources/Percussion.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>Banjo: ${err}</p>`
+			`ERROR<p>Percussion: ${err}</p>`
 		},
 		onstop:i=>{song[3].play()},
 		onplayerror:(i,e)=>{console.error(e)}
@@ -76,13 +76,13 @@ var song = [
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
-		src:['resources/Percussion.ogg','resources/Percussion.wav'],
+		src:['resources/Electric Guitar Harmony.ogg','resources/Electric Guitar Harmony.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>Percussion: ${err}</p>`
+			`ERROR<p>Electric Guitar Harmony: ${err}</p>`
 		},
 		onstop:i=>{song[5].play()},
 		onplayerror:(i,e)=>{console.error(e)}
