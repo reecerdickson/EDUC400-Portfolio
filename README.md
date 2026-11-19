@@ -3,6 +3,10 @@ Matthew Sass - assisting me with HTML editing
 
 jasondyoungberg - GitHub author of the original code, replicated with authorization under the MIT license 
 
+
+
+
+
 Image Credits:
 
 Accordion icons created by Magnific - Flaticon
