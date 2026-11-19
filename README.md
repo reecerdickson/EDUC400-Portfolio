@@ -11,12 +11,4 @@ jasondyoungberg - GitHub author of the original code, replicated with authorizat
 
 Image Credits:
 
-Accordion icons created by Magnific - Flaticon
-
-Harmonica icons created by Magnific - Flaticon
-
-Banjo icons created by Magnific - Flaticon
-
-Drum icons created by Magnific - Flaticon
-
-Guitar icons created by Magnific - Flaticon
+Instrument icons created by Magnific - Flaticon
