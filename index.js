@@ -73,7 +73,7 @@ volume.forEach((e,i)=>{
 });
 
 function start(){
-	loader.innerHTML='Click to start';
+	loader.innerHTML='<p>This song was written and recorded in my home studio, located on the traditional, ancestral, and unceded territories of the Katzie First Nation and the Kwantlen First Nation. <br><br>Click To Start. </p>';
 	document.addEventListener('click',()=>{
 		playing = true;
 		song.forEach(e=>e.play());
@@ -100,9 +100,9 @@ function start(){
 
 		if ('mediaSession' in navigator) {
 			navigator.mediaSession.metadata = new MediaMetadata({
-				title: 'Travelers',
-				artist: 'Andrew Prahlow',
-				album: 'Outer Wilds',
+				title: 'Educ400',
+				artist: 'Reece Dickson',
+				album: 'Portfolio',
 				artwork: [
 					{src:'favicon.ico',sizes:'940x940',type:'image/x-icon'}
 				]

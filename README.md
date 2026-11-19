@@ -1,8 +1,5 @@
 https://reecerdickson.github.io/EDUC400-Portfolio/
 
-
-
-
 Special Thanks:
 
 Matthew Sass - assisting me with HTML editing
