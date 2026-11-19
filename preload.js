@@ -12,91 +12,79 @@ var volume = localStorage.volume || '0.5,0.5,0.5,0.5,0.5,0.5,0.5';
 volume = volume.split(',');
 volume = volume.map(parseFloat);
 
-var loadState = 7;
+var loadState = 6;
 
 var song = [
 	new Howl({
-		src:['resources/chert.ogg','resources/chert.wav'],
+		src:['resources/Accordion.ogg','resources/Accordion.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>chert: ${err}</p>`
+			`ERROR<p>Accordion: ${err}</p>`
 		},
 		onstop:i=>{song[0].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
-		src:['resources/esker.ogg','resources/esker.wav'],
+		src:['resources/Acoustic Guitar.ogg','resources/Acoustic Guitar.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>esker: ${err}</p>`
+			`ERROR<p>Acoustic Guitar: ${err}</p>`
 		},
 		onstop:i=>{song[1].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
-		src:['resources/riebeck.ogg','resources/riebeck.wav'],
+		src:['resources/Electric Guitar Harmony.ogg','resources/Electric Guitar Harmony.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>riebeck: ${err}</p>`
+			`ERROR<p>Electric Guitar Harmony: ${err}</p>`
 		},
 		onstop:i=>{song[2].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
-		src:['resources/gabbro.ogg','resources/gabbro.wav'],
+		src:['resources/Banjo.ogg','resources/Banjo.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>gabbro: ${err}</p>`
+			`ERROR<p>Banjo: ${err}</p>`
 		},
 		onstop:i=>{song[3].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
-		src:['resources/feldspar.ogg','resources/feldspar.wav'],
+		src:['resources/Harmonica.ogg','resources/Harmonica.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>feldspar: ${err}</p>`
+			`ERROR<p>Harmonica: ${err}</p>`
 		},
 		onstop:i=>{song[4].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	}),
 	new Howl({
-		src:['resources/solanum.ogg','resources/solanum.wav'],
+		src:['resources/Percussion.ogg','resources/Percussion.wav'],
 		loop: true,
 		volume: 0,
 		onload: ()=>{loadState -= 1;},
 		onloaderror:err=>{
 			document.getElementById('loader').innerHTML = 
-			`ERROR<p>solanum: ${err}</p>`
+			`ERROR<p>Percussion: ${err}</p>`
 		},
 		onstop:i=>{song[5].play()},
-		onplayerror:(i,e)=>{console.error(e)}
-	}),
-	new Howl({
-		src:['resources/prisoner.ogg','resources/prisoner.wav'],
-		loop: true,
-		volume: 0,
-		onload: ()=>{loadState -= 1;},
-		onloaderror:err=>{
-			document.getElementById('loader').innerHTML = 
-			`ERROR<p>prisoner: ${err}</p>`
-		},
-		onstop:i=>{song[6].play()},
 		onplayerror:(i,e)=>{console.error(e)}
 	})
 ];
