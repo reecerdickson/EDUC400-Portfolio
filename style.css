@@ -182,3 +182,57 @@ body {
   opacity: 1;
   transform: none;
 }
+@media (max-width: 1451px) {
+  .main {
+    grid-template-columns: repeat(2, 404px);
+    column-gap: 24px;
+  }
+}
+@media (max-width: 840px) {
+  .main {
+    grid-template-columns: minmax(0, 404px);
+    column-gap: 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .slot {
+    width: 100%;
+  }
+
+  .traveler {
+    width: calc(100% - 4px);
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+  }
+
+  .icon0,
+  .icon {
+    width: 75%;
+    height: 75%;
+    top: 12.5%;
+    left: 12.5%;
+  }
+
+  .volume {
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+  }
+
+  .credit {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+
+  .loading {
+    padding: 24px;
+    font-size: clamp(2rem, 8vw, 5rem);
+    box-sizing: border-box;
+  }
+
+  .loading p {
+    font-size: clamp(1.25rem, 5vw, 3rem);
+  }
+}
