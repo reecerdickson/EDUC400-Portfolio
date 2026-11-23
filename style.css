@@ -35,16 +35,17 @@ body {
 }
 
 .loading.hidden + .main {
-	display: flex;
+	display: grid;
 }
 
 .main {
-	min-height: 100vh;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: space-evenly;
-	justify-content: space-evenly;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 404px);
+  justify-content: center;
+  align-content: start;
+  column-gap: 120px;
+  row-gap: 0;
 }
 
 .volume {
@@ -86,19 +87,24 @@ body {
 	opacity: 1;
 }
 
-.traveler {
-	width: 400px;
-	height: 400px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	margin: 10px;
-	cursor: pointer;
-	border-radius: 50px;
+.slot {
+  width: 404px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-	filter: grayscale(100%);
-	transition: filter 500ms;
-	max-width: 100%;
+.traveler {
+  width: 400px;
+  height: 400px;
+  margin: 2px;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50px;
+  filter: grayscale(100%);
+  transition: filter 500ms;
+  max-width: 100%;
 }
 
 .traveler.muted {
@@ -150,29 +156,29 @@ body {
 	user-select: none;
 	pointer-events: none;
 }
-.slot {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-}
-
 .caption {
 		width: 380px;
 		max-width: 100%;
 		box-sizing: border-box;
-		margin: 0 10px 10px;
-		padding: 12px 16px;
+		max-height: 0;
+		margin: 0 10px;
+		padding: 0 16px;
+		overflow: hidden;
 		background-color: #222;
 		border-radius: 15px;
 		font-size: 1.2rem;
 
 		opacity: 0;
 		transform: translateY(-8px);
-		transition: opacity 500ms, transform 500ms;
+		transition: max-height 500ms, margin 500ms, padding 500ms,
+              opacity 500ms, transform 500ms;
 		pointer-events: none;
 }
 
 .traveler.on + .caption {
-		opacity: 1;
-		transform: none;
+  max-height: 1000px;
+  margin: 0 10px 10px;
+  padding: 12px 16px;
+  opacity: 1;
+  transform: none;
 }
