@@ -88,3 +88,10 @@ var song = [
 		onplayerror:(i,e)=>{console.error(e)}
 	})
 ];
+
+const t = song[0].seek();
+song.forEach(e => {
+    if (Math.abs(e.seek() - t) > seekThreshold) {
+        e.seek(t);
+    }
+});

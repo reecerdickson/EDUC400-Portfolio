@@ -79,16 +79,19 @@ function start(){
 		song.forEach(e=>e.play());
 		loader.classList.add('hidden');
 
-		setInterval(()=>{
-			song.forEach(e=>{
-				if(!e.playing()){
-					e.play()
-				}
-			})
+		setInterval(() => {
+    const referenceTime = song[0].seek();
 
-			var t = song[0].seek();
-			song.forEach(e=>e.seek(t));
-		},1000)
+    song.forEach(track => {
+        if (!track.playing()) {
+            track.play();
+        }
+
+        if (Math.abs(track.seek() - referenceTime) > seekThreshold) {
+            track.seek(referenceTime);
+        }
+    });
+}, 1000);
 
 		setInterval(()=>{
 			song.forEach((e,i)=>{
